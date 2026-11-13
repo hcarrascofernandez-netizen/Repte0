@@ -1,22 +1,17 @@
-function comprobarOpcion() {
+function comprobarOpcion(opcion) {
     try {
-        let opcion = document.getElementById("opcion").value;
-
-        if (opcion !== "sumar" && opcion !== "restar") {
-            throw new Error("Opcion incorrecta");
+        if (opcion !== "1" && opcion !== "2") {
+            throw new Error("El usuario ha seleccionado una opción inexistente");
         }
 
-        alert("Operacion seleccionada correctamente.");
-
-        document.getElementById("mensaje").textContent =
-            "Operacion correcta.";
+        console.log("Opción correcta: " + opcion);
 
     } catch (error) {
-        console.error("Error 2: " + error.message);
-
-        alert("ERROR 2: Has seleccionado una opcion incorrecta.");
-
-        document.getElementById("mensaje").textContent =
-            "Selecciona una operacion valida.";
+        console.error("ERROR 2:", error.message);
+        alert("ERROR 2: La opción seleccionada no es válida. Elige 1 o 2.");
     }
 }
+
+let opcion = prompt("Selecciona una opción:\n1. Continuar\n2. Salir");
+
+comprobarOpcion(opcion);
