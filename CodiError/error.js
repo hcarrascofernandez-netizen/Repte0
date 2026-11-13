@@ -1,6 +1,4 @@
-// ==========================================
-// 1. ERROR PER CODI (Capturat amb try/catch)
-// ==========================================
+// 1. ERROR PER CODI
 try {
   console.log("--- INICI PROVA 1: Error de codi ---");
   console.log("Abans");
@@ -17,10 +15,7 @@ try {
   alert("⚠️ Error de codi: S'ha produït un error intern al sistema.");
 }
 
-
-// ==========================================
 // 2. ERROR PER OPCIÓ INCORRECTA
-// ==========================================
 try {
   console.log("\n--- INICI PROVA 2: Opció incorrecta ---");
   
