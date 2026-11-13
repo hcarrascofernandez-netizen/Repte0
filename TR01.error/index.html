@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Prueba de errores</title>
+</head>
+<body>
+
+    <h1>Prueba de errores JavaScript</h1>
+
+    <h3>Error 1: Error provocado por código</h3>
+    <button onclick="errorCodigo()">Provocar error</button>
+
+    <br><br>
+
+    <h3>Error 2: Opción incorrecta</h3>
+
+    <select id="opcion">
+        <option value="sumar">Sumar</option>
+        <option value="restar">Restar</option>
+        <option value="incorrecta">Opción incorrecta</option>
+    </select>
+
+    <button onclick="comprobarOpcion()">Comprobar opción</button>
+
+    <h3>Mensaje:</h3>
+    <p id="mensaje">Aquí aparecerán los mensajes.</p>
+
+    <script src="error1.js"></script>
+    <script src="error2.js"></script>
+
+</body>
+</html>
