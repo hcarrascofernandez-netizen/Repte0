@@ -1,16 +1,13 @@
 function errorCodigo() {
-
     try {
-
-        throw new Error("Error provocado mediante código");
+        throw new Error("Error provocado mediante codigo");
 
     } catch (error) {
+        console.error("Error 1: " + error.message);
 
-        console.error("Error de código: " + error.message);
+        alert("ERROR 1: Ha ocurrido un error en el codigo.");
 
         document.getElementById("mensaje").textContent =
-            "Ha ocurrido un error interno en el programa.";
-
+            "Se ha producido un error en el codigo.";
     }
-
 }
