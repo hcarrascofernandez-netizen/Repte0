@@ -1,27 +1,46 @@
-// Provem d'executar codi que fallarà
+// ==========================================
+// 1. ERROR PER CODI (Capturat amb try/catch)
+// ==========================================
 try {
-    // 1. Error provocat pel codi
-    let resultat = null;
-    console.log(resultat.nom); // Això llançarà un TypeError perquè resultat és null
-
-} catch (errorCodi) {
-    // Missatge per consola
-    console.error("Error detectat pel codi: " + errorCodi.message);
-    // Missatge per l'aplicació (usuari)
-    alert("Ups! Hi ha hagut un error intern al programa. Torna-ho a provar.");
+  console.log("--- INICI PROVA 1: Error de codi ---");
+  console.log("Abans");
+  
+  // Llancem un error manualment
+  throw new Error("Ostres! Hi ha hagut un error intern.");
+  
+  console.log("Això no es mostrarà mai");
+} catch (error) {
+  // Missatge per consola (per al desenvolupador)
+  console.log("Error capturat a la consola: " + error.message);
+  
+  // Missatge per l'aplicació (per a l'usuari)
+  alert("⚠️ Error de codi: S'ha produït un error intern al sistema.");
 }
 
-// 2. Error provocat per una opció incorrecta
-try {
-    let opcio = "opcio_invalida";
-    if (opcio !== "A" && opcio !== "B") {
-        // Llancem l'error nosaltres mateixos
-        throw new Error("L'opció '" + opcio + "' no és vàlida.");
-    }
 
-} catch (errorOpcio) {
-    // Missatge per consola
-    console.error("Error d'opció: " + errorOpcio.message);
-    // Missatge per l'aplicació (usuari)
-    alert("Has seleccionat una opció incorrecta.");
+// ==========================================
+// 2. ERROR PER OPCIÓ INCORRECTA
+// ==========================================
+try {
+  console.log("\n--- INICI PROVA 2: Opció incorrecta ---");
+  
+  // Simulem una opció triada per l'usuari
+  let opcioUsuari = "opcio_invalida"; 
+  let opcionsValides = ["A", "B", "C"];
+
+  console.log("L'usuari ha triat: " + opcioUsuari);
+
+  // Comprovem si l'opció és vàlida
+  if (!opcionsValides.includes(opcioUsuari)) {
+    throw new Error("L'opció '" + opcioUsuari + "' no és vàlida.");
+  }
+  
+  console.log("Opció correcta!");
+
+} catch (error) {
+  // Missatge per consola (per al desenvolupador)
+  console.log("Error capturat a la consola: " + error.message);
+  
+  // Missatge per l'aplicació (per a l'usuari)
+  alert("⚠️ Error d'opció: L'opció seleccionada no és correcta. Tria una vàlida.");
 }
