@@ -1,25 +1,22 @@
 function comprobarOpcion() {
-
     try {
-
         let opcion = document.getElementById("opcion").value;
 
         if (opcion !== "sumar" && opcion !== "restar") {
-
-            throw new Error("Has seleccionado una opción incorrecta");
-
+            throw new Error("Opcion incorrecta");
         }
 
+        alert("Operacion seleccionada correctamente.");
+
         document.getElementById("mensaje").textContent =
-            "Operación seleccionada correctamente.";
+            "Operacion correcta.";
 
     } catch (error) {
+        console.error("Error 2: " + error.message);
 
-        console.error("Error de opción: " + error.message);
+        alert("ERROR 2: Has seleccionado una opcion incorrecta.");
 
         document.getElementById("mensaje").textContent =
-            "Error: selecciona una operación válida.";
-
+            "Selecciona una operacion valida.";
     }
-
 }
