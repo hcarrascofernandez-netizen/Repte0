@@ -1,27 +1,49 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="ca">
 <head>
-    <meta charset="UTF-8">
-    <title>TR01 - Control de errores</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TR01.01 - Errors amb throw i try/catch</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    #missatge {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    .error {
+      background-color: #ffe0e0;
+      color: #b00020;
+      border: 1px solid #b00020;
+    }
+    .ok {
+      background-color: #e0ffe0;
+      color: #006600;
+      border: 1px solid #006600;
+    }
+  </style>
 </head>
 <body>
+  <h1>Prova d'errors amb throw i try/catch</h1>
+  <p>Fes clic als botons per executar cada cas:</p>
 
-    <h1>TR01 - Control de errores</h1>
+  <button id="botoErrorCodi">Error per codi</button>
+  <button id="botoErrorOpcio">Error per opció incorrecta</button>
 
-    <h2>Prueba de errores</h2>
+  <p id="missatge">Encara no s'ha executat cap acció.</p>
 
-    <button onclick="provocarErrorCodigo()">
-        Provocar error 1
-    </button>
-
-    <button onclick="comprobarOpcion()">
-        Probar opción
-    </button>
-
-    <p id="mensaje"></p>
-
-    <script src="ERROR1.js"></script>
-    <script src="ERROR2.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
