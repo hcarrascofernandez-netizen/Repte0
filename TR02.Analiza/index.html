@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TR01.02 - Calculadora amb captura d'errors</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+    h1 {
+      color: #333;
+      border-bottom: 3px solid #007bff;
+      padding-bottom: 10px;
+    }
+    #missatge {
+      margin: 20px 0;
+      padding: 20px;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: bold;
+      background-color: #fff;
+      border: 2px solid #ccc;
+      min-height: 30px;
+      transition: all 0.2s;
+    }
+    #missatge.error {
+      background-color: #ffe0e0;
+      color: #b00020;
+      border-color: #b00020;
+    }
+    #missatge.ok {
+      background-color: #e0ffe0;
+      color: #006600;
+      border-color: #006600;
+    }
+    button {
+      padding: 12px 24px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .proves {
+      margin-top: 30px;
+      background-color: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+    }
+    .proves h2 {
+      font-size: 16px;
+      margin-top: 0;
+      color: #555;
+    }
+    .proves ul {
+      columns: 2;
+      padding-left: 20px;
+    }
+    .proves li {
+      margin: 4px 0;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+    }
+    .proves code {
+      background-color: #eef;
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+  <h1>TR01.02 - Calculadora amb captura d'errors</h1>
+
+  <p>Fes clic al botó i escriu una operació quan t'ho demani:</p>
+  <button id="boto">Calcula</button>
+
+  <p id="missatge">Encara no s'ha executat cap operació.</p>
+
+  <div class="proves">
+    <h2>🧪 Proves suggerides (segons CodiError2.pdf):</h2>
+    <ul>
+      <li><code>3+5</code> → 3 + 5 = 8</li>
+      <li><code>3.5 * 2</code> → 3.5 * 2 = 7</li>
+      <li><code>-5 + 2</code> → -5 + 2 = -3</li>
+      <li><code>10 % 3</code> → 10 % 3 = 1</li>
+      <li><code>8 / 0</code> → Error: No es pot dividir entre zero</li>
+      <li><code>8 % 0</code> → Error: No es pot calcular el mòdul entre zero</li>
+      <li><code>1 + 2 + 3</code> → Error: Només es permet una operació</li>
+      <li><code>hola</code> → Error: Només es permeten nombres i operadors</li>
+      <li><code>.5 + 1</code> → Error: Els decimals han de començar amb un dígit</li>
+      <li><em>(Cancel·lar)</em> → Error: Has cancel·lat l'operació</li>
+    </ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
